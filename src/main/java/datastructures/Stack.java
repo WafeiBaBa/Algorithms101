@@ -14,7 +14,7 @@ public class Stack {
         }
     }
 
-    private Node head; // add and remove things here
+    private Node head; // enqueue and dequeue things here
     private int size;
 
     public boolean isEmpty() {

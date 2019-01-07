@@ -36,7 +36,7 @@ public class Anagram {
             if (map.containsKey(letter)) {
                 Integer currentCount = map.get(letter);
                 map.put(letter, currentCount + 1);
-            } else { // else add
+            } else { // else enqueue
                 map.put(letter, 1);
             }
         }

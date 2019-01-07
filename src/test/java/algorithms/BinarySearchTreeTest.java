@@ -98,4 +98,28 @@ public class BinarySearchTreeTest {
 
         bst.prettyPrint();
     }
+
+    @Test
+    public void TraversalTree() {
+        bst.insert(5, "e");
+        bst.insert(3, "c");
+        bst.insert(2, "b");
+        bst.insert(4, "d");
+        bst.insert(7, "g");
+        bst.insert(6, "f");
+        bst.insert(8, "h");
+
+        bst.prettyPrint();
+        System.out.println("\n" +
+                "---------------------");
+        bst.printPreOrderTraversal();
+        System.out.println("\n" +
+                "---------------------");
+        bst.printInOrderTraversal();
+        System.out.println("\n" +
+                "---------------------");
+        bst.printPostOrderTraversal();
+        System.out.println("\n" +
+                "---------------------");
+    }
 }

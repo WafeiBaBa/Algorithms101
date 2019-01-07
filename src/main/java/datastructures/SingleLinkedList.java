@@ -136,7 +136,7 @@ new node you just created the next head. So you are just bumping everything down
  2. Assigning it's next to the current head (which at first is null because it is empty).
  3. And then assigning this newNode to the head. So it is at the front of the list.
 
- Then when you add the next node you repeat the process.
+ Then when you enqueue the next node you repeat the process.
  1. Create the new node.
  2. Assign it's next to the current head of the list (the last element you added).
  3. And then making this next node the head.

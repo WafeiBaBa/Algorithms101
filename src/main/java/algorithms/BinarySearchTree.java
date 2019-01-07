@@ -1,5 +1,8 @@
 package algorithms;
 
+
+import java.util.Stack;
+
 public class BinarySearchTree {
 
     class Node {
@@ -88,7 +91,7 @@ public class BinarySearchTree {
 
     // First two are simple. Third is more complex.
 
-    // Case 1: No child - simply remove from tree by nulling it.
+    // Case 1: No child - simply dequeue from tree by nulling it.
     //
     // Case 2: One child - copy the child to the node to be deleted and delete the child
 
@@ -162,7 +165,7 @@ public class BinarySearchTree {
     private void inOrderTraversal(Node node) {
         if (node != null) {
             inOrderTraversal(node.left);
-            System.out.println(node.key);
+            System.out.print(node.key);
             inOrderTraversal(node.right);
         }
     }
@@ -171,12 +174,32 @@ public class BinarySearchTree {
         preOrderTraversal(root);
     }
 
+//    private void preOrderTraversal(Node node) {
+//        if (node != null) {
+//            System.out.print(node.key); // root
+//            preOrderTraversal(node.left);
+//            preOrderTraversal(node.right);
+//        }
+//    }
+
+    // With the Stack
     private void preOrderTraversal(Node node) {
-        if (node != null) {
-            System.out.println(node.key); // root
-            preOrderTraversal(node.left);
-            preOrderTraversal(node.right);
+        Stack<Node> s = new Stack<>();
+        while (true) {
+
+            while (node != null) {
+                System.out.print(node.key);
+                s.push(node.right);
+                node = node.left;
+            }
+
+            if (s.isEmpty()) {
+                break;
+            }
+
+            node = s.pop();
         }
+
     }
 
     public void printPostOrderTraversal() {
@@ -187,9 +210,21 @@ public class BinarySearchTree {
         if (node != null) {
             postOrderTraversal(node.left);
             postOrderTraversal(node.right);
-            System.out.println(node.key);
+            System.out.print(node.key);
         }
     }
+
+    public void printLevelTraversal() {
+        levelTraversal(root);
+    }
+
+    private void levelTraversal(Node node) {
+//        Queue<Node> q = new Queue<>() {
+//
+//        }
+
+    }
+
 
     public void prettyPrint() {
         // Hard coded print out of binary tree depth = 3

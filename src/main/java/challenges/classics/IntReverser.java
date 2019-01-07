@@ -10,7 +10,7 @@ public class IntReverser {
     // i.e. 123 % 10 => 3
     //
     // Once you have the single digit number, you take your current reverse result,
-    // multiple it by 10, and then add your new digit.
+    // multiple it by 10, and then enqueue your new digit.
     //
     // reverse = reverse * 10 + lastDigit; => 0 + 3 = 3
     //
@@ -18,7 +18,7 @@ public class IntReverser {
     //
     // x = x / 10; => 123 => 12
     //
-    // Then you repeat the process with 12. Grab the single digit (2), add it to the accumulating reverse (32), shave off a 10.
+    // Then you repeat the process with 12. Grab the single digit (2), enqueue it to the accumulating reverse (32), shave off a 10.
     //
 
     public int reverse(int x) {

@@ -10,8 +10,8 @@ public class Queue {
         }
     }
 
-    private Node head; // remove things here
-    private Node tail; // add things here
+    private Node head; // dequeue things here
+    private Node tail; // enqueue things here
 
     public boolean isEmpty() {
         return head == null;
@@ -21,7 +21,7 @@ public class Queue {
         return head.data;
     }
 
-    public void add(int data) {
+    public void enqueue(int data) {
         // Create a new node
         // Set the current tail.next to point to this new node
         // Then set the new node to be the new tail
@@ -38,7 +38,7 @@ public class Queue {
         }
     }
 
-    public int remove() {
+    public int dequeue() {
         // Save the data
         // Point the head to the next element (effectively removing it)
         // Then return the data

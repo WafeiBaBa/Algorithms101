@@ -4,7 +4,7 @@ package challenges.stacksAndQueues;
 // This problem isn't that bad if we just draw it out.
 // We basically need a collection of Stacks (which we can track in an ArrayList).
 // And whenever we exceed our threshold, we insert a new Stack.
-// And whenever we fall beneath it, we remove the old Stack.
+// And whenever we fall beneath it, we dequeue the old Stack.
 
 import java.util.ArrayList;
 import java.util.EmptyStackException;

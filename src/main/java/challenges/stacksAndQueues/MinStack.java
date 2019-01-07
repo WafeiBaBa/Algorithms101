@@ -40,7 +40,7 @@ public class MinStack {
     public void push(int data) {
         int min = data;
 
-        // check for a min every time we add a node
+        // check for a min every time we enqueue a node
         if (head != null) {
             min = Math.min(data, min());
         }

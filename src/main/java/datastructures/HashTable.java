@@ -29,7 +29,7 @@ public class HashTable {
         // Create the linked list entry
         HashEntry entry = new HashEntry(key, value);
 
-        // If no entry there - add it
+        // If no entry there - enqueue it
         if (data[index] == null) {
             data[index] = entry;
         }
@@ -73,6 +73,7 @@ public class HashTable {
         System.out.println("hashCode = " + hashCode);
 
         // Convert to index
+        // change the hashCode to positive
         int index = (hashCode & 0x7fffffff) % INITIAL_SIZE;
 //        int index = hashCode % INITIAL_SIZE;
 

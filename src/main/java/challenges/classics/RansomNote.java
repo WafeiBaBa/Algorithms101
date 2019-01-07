@@ -36,7 +36,7 @@ public class RansomNote {
                 Integer currentCount = map.get(character);
                 map.put(character, currentCount + 1);
             }
-            // Else add
+            // Else enqueue
             else {
                 map.put(String.valueOf(characters[i]), 1);
             }
