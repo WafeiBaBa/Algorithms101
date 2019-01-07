@@ -88,7 +88,7 @@ public class LinkedListTest {
     // Delete with value
     // Remove front
     // Remove back
-    // Contains
+    // contains
 
     // What you need to know
 

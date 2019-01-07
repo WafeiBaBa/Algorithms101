@@ -36,23 +36,7 @@ public class DynamicArray<String> {
         size++;
     }
 
-    //
-    // You try
-    // Try implementing delete, isEmpty, and Contains on your own.
-    // You can find the solution at the bottom
-
-    /*
-    public void delete(int index) {
-    }
-
-    public boolean isEmpty() {
-
-    }
-
-    public boolean Contains(String value) {
-    }
-    */
-
+    // resize the capacity
     private void resize() {
         Object[] newData = new Object[initialCapacity * 2];
         for (int i = 0; i < initialCapacity; i++) {
@@ -86,9 +70,11 @@ public class DynamicArray<String> {
 
     public void delete(int index) {
         // Copy down
-        for (int j = index; j < size - 1; j++) {
-            data[j] = data[j + 1];
-        }
+        if (size - 1 - index >= 0)
+            System.arraycopy(data, index + 1, data, index, size - 1 - index);
+//        for (int j = index; j < size - 1; j++) {
+//            data[j] = data[j + 1];
+//        }
         size--;
     }
 
@@ -96,7 +82,7 @@ public class DynamicArray<String> {
         return size == 0;
     }
 
-    public boolean Contains(String value) {
+    public boolean contains(String value) {
         for (int i = 0; i <= size -  1; i++) {
             String currentValue = (String)data[i];
             if (currentValue.equals(value)) {

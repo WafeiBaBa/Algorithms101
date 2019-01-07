@@ -40,15 +40,20 @@ public class LinkedList {
             throw new IllegalStateException("Empty list!");
         }
 
+        Node current = getTailNode();
+
+        // We are at the tail
+        return current.data;
+    }
+
+    private Node getTailNode() {
         Node current = head;
 
         // while we are not at the tail
         while (current.next != null) {
             current = current.next; // O(n)
         }
-
-        // We are at the tail
-        return current.data;
+        return current;
     }
 
     public void addBack(int data) {
@@ -61,12 +66,7 @@ public class LinkedList {
         }
 
         // Else starting at head...
-        Node current = head;
-
-        // Walk until to hit tail
-        while (current.next != null) {
-            current = current.next;
-        }
+        Node current = getTailNode();
 
         // Set current node to equal newNode
         current.next = newNode;

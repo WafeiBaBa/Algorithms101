@@ -56,8 +56,8 @@ public class DynamicArrayTest {
 
     @Test
     public void Contains() throws Exception {
-        Assert.assertFalse(array.Contains("a"));
+        Assert.assertFalse(array.contains("a"));
         array.add("a");
-        Assert.assertTrue(array.Contains("a"));
+        Assert.assertTrue(array.contains("a"));
     }
 }
